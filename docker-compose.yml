@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "8501:8501" # 必要に応じてポート番号を変更
+    volumes:
+      - .:/app
+    tty: true
+    environment:
+      OPENAI_API_KEY: "${OPENAI_API_KEY}"
+      HATENA_ID: "${HATENA_ID}"
+      HATENA_API_KEY: "${HATENA_API_KEY}"
+      HATENA_END_POINT: "${HATENA_END_POINT}"
